@@ -41,3 +41,30 @@ const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
 shapes.forEach((shape) => {
   console.log(shape.getArea());
 });
+
+/*
+  ---------------------------
+  일반 객체를 interface로 타입 설정
+*/
+
+interface Person {
+  name: string;
+  age?: number; // ? -> 필수가 아닌 값임을 뜻한다.
+}
+
+interface Developer extends Person {
+  skills: string[];
+}
+
+const person: Person = {
+  name: "김사람",
+  age: 20,
+};
+
+const expert: Developer = {
+  name: "김개발",
+  skills: ["javascript", "react"],
+};
+
+const people: Person[] = [person, expert];
+console.log(people);

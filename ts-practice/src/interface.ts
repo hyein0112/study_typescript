@@ -1,11 +1,12 @@
 /*
-  Interface
+  Class에서의 Interface
 */
 
 interface Shape {
   getArea(): number; //Shape interface에는 getArea 함수가 반드시 있어야하며 반황값은 number이다.
 }
 
+// Circle Class
 class Circle implements Shape {
   // implements 키워드 사용 -> 해당 클래스가 Shape interface의 조건을 충족
 
@@ -19,6 +20,7 @@ class Circle implements Shape {
   }
 }
 
+// Rectangle Class
 class Rectangle implements Shape {
   constructor(private width: number, private height: number) {
     this.width = width;
@@ -32,7 +34,7 @@ class Rectangle implements Shape {
 const circle = new Circle(5);
 const rectangle = new Rectangle(10, 5);
 
-console.log(circle.radius);
+console.log(circle.radius); // radius를 public으로 설정했기 때문에 접근 가능.
 
 const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
 
